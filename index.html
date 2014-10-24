@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+	<head>
+		<style type="text/css">
+			#card.flippedY {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+	#card {
+  height: 250px;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s ease 0s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: transform 1s ease 0s;
+  width: 250px;
+}
+#card .front {
+  background: none repeat scroll 0 0 red;
+}
+#card .back {
+  background: none repeat scroll 0 0 blue;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+#card figure {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  color: white;
+  display: block;
+  font-size: 140px;
+  font-weight: bold;
+  height: 100%;
+  line-height: 260px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+figure{margin: 0;}
+
+		</style>	
+	</head>
+	<body>
+		<div id="card" class="">
+      <figure class="front">1</figure>
+      <figure class="back">2</figure>
+    </div>
+
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		setInterval(function(){
+			$("#card").toggleClass("flippedY");
+		},2000);
+	});
+	</script>
+
+
+	</body>
+
+</html>
